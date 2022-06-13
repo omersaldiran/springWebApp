@@ -3,6 +3,6 @@ Java spring boot ile hazırlığı yapılmış ve geliştirmesi devam eden bir W
 
 ## Teknoloji
 
-Backend - Java Spring
-Frontend - React
-Database - PostgreSQL
+- Backend - Java Spring
+- Frontend - React
+- Database - PostgreSQL
