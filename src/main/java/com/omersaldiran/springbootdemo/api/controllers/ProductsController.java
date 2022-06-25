@@ -33,4 +33,9 @@ public class ProductsController {
     public DataResult<Product> getByProductName(@RequestParam String productName){
         return this.productService.getByProductName(productName);
     }
+    @GetMapping("/getByProductNameAndCategoryId")
+
+    public DataResult<Product> getByProductNameAndCategoryId(@RequestParam String productName, int categoryId) {
+        return this.productService.getByProductNameAndCategoryId(productName,categoryId);
+    }
 }
