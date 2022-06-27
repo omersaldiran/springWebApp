@@ -7,6 +7,7 @@ import com.omersaldiran.springbootdemo.core.utilities.results.SuccessDataResult;
 import com.omersaldiran.springbootdemo.core.utilities.results.SuccessResult;
 import com.omersaldiran.springbootdemo.dataAccess.abstracts.ProductDao;
 import com.omersaldiran.springbootdemo.entities.concretes.Product;
+import com.omersaldiran.springbootdemo.entities.dtos.ProductWithCategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -40,6 +41,11 @@ public class ProductManager implements ProductService {
     public DataResult<List<Product>> getAll(int pageNo, int pageSize) {
         Pageable pageable = PageRequest.of(pageNo-1,pageSize);
         return new SuccessDataResult<List<Product>>(this.productDao.findAll(pageable).getContent());
+    }
+
+    @Override
+    public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
+        return new SuccessDataResult<List<ProductWithCategoryDto>>(this.productDao.getProductWithCategoryDetails(),"Data listelendi");
     }
 
     @Override

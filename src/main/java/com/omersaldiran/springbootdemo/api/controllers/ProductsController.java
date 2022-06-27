@@ -4,6 +4,7 @@ import com.omersaldiran.springbootdemo.business.abstracts.ProductService;
 import com.omersaldiran.springbootdemo.core.utilities.results.DataResult;
 import com.omersaldiran.springbootdemo.core.utilities.results.Result;
 import com.omersaldiran.springbootdemo.entities.concretes.Product;
+import com.omersaldiran.springbootdemo.entities.dtos.ProductWithCategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +24,11 @@ public class ProductsController {
     public DataResult<List<Product>> getAll(){
 
         return this.productService.getAll();
+    }
+    @GetMapping("/getProductWithCategoryDetails")
+    public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails(){
+
+        return this.productService.getProductWithCategoryDetails();
     }
     @GetMapping("/getAllByPage")
     public DataResult<List<Product>> getAll(int pageNo, int pageSize){
