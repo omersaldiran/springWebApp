@@ -2,6 +2,7 @@ package com.omersaldiran.springbootdemo;
 
 import com.omersaldiran.springbootdemo.business.concretes.ProductManager;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import springfox.documentation.builders.PathSelectors;
